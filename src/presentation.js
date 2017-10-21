@@ -24,20 +24,22 @@ require("./my.css");
 
 const theme = createTheme({
     primary: "white",
-    secondary: "#1F2022",
-    tertiary: "#7b0046",
-    quartenary: "#e6e6e6",
+    secondary: "#212121",
+    tertiary: "#ad1457",
+    well: "#e91e63",
+    quartenary: "gold",
+    quarternary: "white"
 }, {
-    primary: "Montserrat",
-    secondary: "Helvetica"
+    primary: "Open Sans",
+    secondary: "Open Sans"
 });
 
 export default class Presentation extends React.Component {
     render() {
         return (
             <Deck transition={["fade"]} transitionDuration={500} theme={theme}>
-                <Slide bgColor="tertiary">
-                    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+                <Slide bgColor="well">
+                    <Heading size={1} fit caps lineHeight={1} textColor="quartenary">
                         Your first step in JavaScript on hardware
                     </Heading>
                     <Text margin="10px 0 0" textColor="secondary" size={1} fit bold>
@@ -46,10 +48,10 @@ export default class Presentation extends React.Component {
                 </Slide>
 
                 <Slide bgColor="secondary">
-                    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+                    <Heading size={1} fit caps lineHeight={1} textColor="quartenary">
                         Що для цього потрібно
                     </Heading>
-                    <List textColor="primary">
+                    <List textColor="quartenary">
                         <ListItem>Плата Espruino</ListItem>
                         <ListItem>Компоненти</ListItem>
                         <ListItem>IDE</ListItem>
@@ -57,7 +59,7 @@ export default class Presentation extends React.Component {
                 </Slide>
 
                 <Slide bgColor="quartenary" textColor="secondary" textSize={25} textAlign="left">
-                    <Heading size={4} lineHeight={1} textColor="secondary">
+                    <Heading size={4} lineHeight={1} textColor="tertiary">
                         Step 1. IDE
                     </Heading>
 
@@ -96,12 +98,12 @@ export default class Presentation extends React.Component {
                     </List>
                 </Slide>
 
-                <Slide>
-                    <Heading size={4} lineHeight={1} textColor="tertiary">
+                <Slide bgColor="secondary">
+                    <Heading size={4} textColor="quartenary">
                         Перший успішний крок.
                     </Heading>
-                    <img src={require("./resources/ide.png")} height={430} alt=""/>
-                    <Text textSize={20}>
+                    <img src={require("./resources/ide.png")} height={400} alt=""/>
+                    <Text textSize={20} textColor="primary">
                         Права частина - код програми, яку можна завантажити на МК.
                         <br/>
                         Ліва частина - консоль, команди виконуються на МК і показується результат. Можна використовувати для відладки.
@@ -161,20 +163,17 @@ setInterval(function() {"{"}<br/>
                     <Heading size={4} lineHeight={1} textColor="tertiary">
                         Step 5. Працюємо з компонентами
                     </Heading>
-                    <Text>
-                        <a href="http://wiki.amperka.ru/js:start" target="__blank">Документація по платі і роботі з компонентами.</a>
-                    </Text>
                     <List>
-                        <ListItem>
+                        <ListItem textSize={25}>
                             Підключити плату розширення
                         </ListItem>
-                        <ListItem>
+                        <ListItem textSize={25}>
                             Підключити кнопку до 2 піна (P2)
                         </ListItem>
-                        <ListItem>
-                            Використовуючи документацію до модуля кнопки <mark>@amperka/button</mark> написати оброкник взаємодій з кнопкою.
+                        <ListItem textSize={25}>
+                            Використовуючи документацію до модуля кнопки <a href="http://wiki.amperka.ru/js:button" target="__blank">@amperka/button</a> написати оброкник взаємодій з кнопкою.
                         </ListItem>
-                        <ListItem>
+                        <ListItem textSize={25}>
                             Завантажити програму і перевірити її роботу
                         </ListItem>
                     </List>
@@ -183,20 +182,18 @@ setInterval(function() {"{"}<br/>
                     <Heading size={4} lineHeight={1} textColor="tertiary">
                         Step 6. Логуємо показники погоди в домі
                     </Heading>
-                    <Text>
-                        <a href="http://wiki.amperka.ru/js:start" target="__blank">Документація по платі і роботі з компонентами.</a>
-                    </Text>
+
                     <List>
-                        <ListItem>
-                            Підключити температурний датчик до 5 аналогового піна (A2)
+                        <ListItem textSize={25}>
+                            Підключити температурний датчик до 5 аналогового піна (A5)
                         </ListItem>
-                        <ListItem>
-                            Використовуючи документацію до модуля термометра <mark>@amperka/thermometer</mark> написати логер зміни температури через setInterval. Інформацію виводити в консоль
+                        <ListItem textSize={25}>
+                            Використовуючи документацію до модуля термометра <a href="http://wiki.amperka.ru/js:thermometer" target="__blank">@amperka/thermometer</a> написати логер зміни температури через setInterval. Інформацію виводити в консоль
                         </ListItem>
-                        <ListItem>
+                        <ListItem textSize={25}>
                             Додати опцію вимкнення логера кнопкою
                         </ListItem>
-                        <ListItem>
+                        <ListItem textSize={25}>
                             Завантажити програму і перевірити її роботу
                         </ListItem>
                     </List>
@@ -217,7 +214,7 @@ setInterval(function() {"{"}<br/>
                     </Heading>
                 </Slide>
                 <Slide bgColor="secondary">
-                    <Heading size={4} lineHeight={1} caps fit textColor="primary">
+                    <Heading size={4} lineHeight={1} caps fit textColor="quartenary" textFont="Times New Roman">
                         fin
                     </Heading>
                 </Slide>
