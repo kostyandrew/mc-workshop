@@ -47,6 +47,11 @@ export default class Presentation extends React.Component {
                     </Text>
                 </Slide>
 
+                <Slide>
+                    <img src={require('./resources/qr.png')} alt=""/>
+                    <Text><mark>https://kostyandrew.github.io/mc-workshop/</mark></Text>
+                </Slide>
+
                 <Slide bgColor="secondary">
                     <Heading size={1} fit caps lineHeight={1} textColor="quartenary">
                         Що для цього потрібно
