@@ -73,8 +73,10 @@ export default class Presentation extends React.Component {
                             Інсталювати Espruino Web IDE для
                             <a
                                 target="__blank"
-                                href="https://chrome.google.com/webstore/detail/espruino-web-ide/bleoifhkdalbjfbobjackfdifdneehpo">
-                                &nbsp;Google&nbsp;Chrome</a>
+                                href="https://chrome.google.com/webstore/detail/espruino-web-ide/bleoifhkdalbjfbobjackfdifdneehpo"
+                            >
+                                &nbsp;Google&nbsp;Chrome
+                            </a>
                             , доступ
                             <a
                                 href="https://www.espruino.com/ide/"
@@ -109,7 +111,7 @@ export default class Presentation extends React.Component {
                     </Heading>
                     <img src={require("./resources/ide.png")} height={400} alt=""/>
                     <Text textSize={20} textColor="primary">
-                        Права частина - код програми, яку можна завантажити на МК.
+                        Права частина - код програми, яку можна Завантажте на МК.
                         <br/>
                         Ліва частина - консоль, команди виконуються на МК і показується результат. Можна використовувати для відладки.
                     </Text>
@@ -137,7 +139,7 @@ export default class Presentation extends React.Component {
                     <Heading size={4} lineHeight={1} textColor="tertiary">
                         Step 3. Перевіримо інтерператор
                     </Heading>
-                    <Text textAlign="left">
+                    <Text textSize={30}>
                         Запустимо ряд команд в консолі.<br/>
                         Наприклад, математичні операції, оголошення і виклик функцій.<br/>
                         Ви отримаєте звичні результати.
@@ -151,16 +153,20 @@ export default class Presentation extends React.Component {
                     <Heading size={4} lineHeight={1} textColor="tertiary">
                         Step 4. Завантаження першої програми
                     </Heading>
-                    <Text textAlign="left">
+                    <Text textSize={25}>Інтерпертатор включає ряд констант, які вказують на відповідні порти плати. Наприклад, LED1 вказує на діод</Text>
+                    <Text textSize={25}>Код приведений ниже це "Hello, World" в мікроконтролерному світі - лампочка яка блимає</Text>
+                    <Text textAlign="left" textSize={30}>
                     <code><pre>
 var  on = false;<br/>
 setInterval(function() {"{"}<br/>
-    on = !on;<br/>
-    LED1.write(on);<br/>
+{"\t"}on = !on;<br/>
+{"\t"}LED1.write(on);<br/>
 {"}"}, 500);
                     </pre></code>
                     </Text>
-                    <Text>
+                    <Text textSize={25}>Метод <mark>write</mark> встановлює стан діода. Булеве <mark>TRUE</mark> показує, що лампочка має горіти</Text>
+                    <Text textSize={25}>Для деяких компонентів доступний і аналоговий запис. Наприклад, можна контролювати рівень яркості лампочки</Text>
+                    <Text textSize={25}>
                         Скористайтесь кнопкою <img src={require('./resources/deploy-icon.png')} alt=""/> для завантаження програми на мк.
                     </Text>
                 </Slide>
@@ -168,18 +174,21 @@ setInterval(function() {"{"}<br/>
                     <Heading size={4} lineHeight={1} textColor="tertiary">
                         Step 5. Працюємо з компонентами
                     </Heading>
+
+                    <Text textSize={25}>Крім запису можна також зчитувати стан сенсорів і датчкиків</Text>
+
                     <List>
                         <ListItem textSize={25}>
-                            Підключити плату розширення
+                            Підключіть плату розширення
                         </ListItem>
                         <ListItem textSize={25}>
-                            Підключити кнопку до 2 піна (P2)
+                            Підключіть кнопку до 2 піна (P2)
                         </ListItem>
                         <ListItem textSize={25}>
-                            Використовуючи документацію до модуля кнопки <a href="http://wiki.amperka.ru/js:button" target="__blank">@amperka/button</a> написати оброкник взаємодій з кнопкою.
+                            Використовуючи документацію до модуля кнопки <a href="http://wiki.amperka.ru/js:button" target="__blank">@amperka/button</a> написати оброкник взаємодій з кнопкою. Наприклад, виводити інформацію в консоль.
                         </ListItem>
                         <ListItem textSize={25}>
-                            Завантажити програму і перевірити її роботу
+                            Завантажте програму і перевірте її роботу
                         </ListItem>
                     </List>
                 </Slide>
@@ -188,18 +197,20 @@ setInterval(function() {"{"}<br/>
                         Step 6. Логуємо показники погоди в домі
                     </Heading>
 
+                    <Text textSize={25}>Аналогові порти включають аналогово-цифровий перетворювач, що дозволяє знімати інформацію не тільки в логічному форматі</Text>
+
                     <List>
                         <ListItem textSize={25}>
-                            Підключити температурний датчик до 5 аналогового піна (A5)
+                            Підключіть температурний датчик до 5 аналогового піна (A5)
                         </ListItem>
                         <ListItem textSize={25}>
-                            Використовуючи документацію до модуля термометра <a href="http://wiki.amperka.ru/js:thermometer" target="__blank">@amperka/thermometer</a> написати логер зміни температури через setInterval. Інформацію виводити в консоль
+                            Використовуючи документацію до модуля термометра <a href="http://wiki.amperka.ru/js:thermometer" target="__blank">@amperka/thermometer</a> написати логер зміни температури. Інформацію виводити в консоль
                         </ListItem>
                         <ListItem textSize={25}>
                             Додати опцію вимкнення логера кнопкою
                         </ListItem>
                         <ListItem textSize={25}>
-                            Завантажити програму і перевірити її роботу
+                            Завантажте програму і перевірте її роботу
                         </ListItem>
                     </List>
                 </Slide>
@@ -207,16 +218,77 @@ setInterval(function() {"{"}<br/>
                     <Heading size={4} lineHeight={1} textColor="tertiary">
                         Step 7. Виводимо температуру на екрані
                     </Heading>
+
+                    <Text textSize={25}>Крім стандартних цифрових і аналогових портів є можливість взаємодії через різноманітні інтерфейси, наприклад - SPI</Text>
+
+                    <List>
+                        <ListItem textSize={25}>
+                            Підключіть дисплей до порту P10 {/* @todo more info */}
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Використовуючи бібліотеку <mark>@amperka/quaddisplay2</mark> створити з'єдання до дисплея через пін P10.
+                            <code><pre>
+var quadDisplay = QuadDisplay.connect(P10);
+                            </pre></code>
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Замість логування температури в консоль використати метод <mark>display</mark> з <mark>quadDisplay</mark>.
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Завантажте програму і перевірте її роботу
+                        </ListItem>
+                    </List>
                 </Slide>
                 <Slide bgColor="quartenary" textColor="secondary">
                     <Heading size={4} lineHeight={1} textColor="tertiary">
                         Step 8. Відображення часу
                     </Heading>
+
+                    <Text textSize={25}>Після запуску плата починає рахувати час</Text>
+
+                    <List>
+                        <ListItem textSize={25}>
+                            Перевірте роботу функції getTime, яка повератає час мк
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Встановити коректний час функцією setTime
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Використовуючи документацію по об'єкту <a href="http://wiki.amperka.ru/js:date" target="__blank">Date</a> додати відображення часу на дисплею
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Нажаття кнопки повинне переключати режими час/температура
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Завантажте програму і перевірте її роботу
+                        </ListItem>
+                    </List>
                 </Slide>
                 <Slide bgColor="quartenary" textColor="secondary">
                     <Heading size={4} textColor="tertiary">
                         Step 9. У разі зникнення живлення
                     </Heading>
+
+                    <Text textSize={25}>Без живлення плата не тільки не виконує програму, а й не рахує час. В комп'ютерах присутня плата з батарейкою яка рахує час навіть коли він вимкнутий</Text>
+                    <Text textSize={25}>Подібний компонент є і для цього мк і працює через протокол I2C</Text>
+
+                    <List>
+                        <ListItem textSize={25}>
+                            Спробуйте від'єднати живлення на деякий час
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Підключіть RTC модуль з батарейкою
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Використовуючи бібліотеку <a href="http://wiki.amperka.ru/js:rtc" target="__blank">@amperka/rtc</a> ініціалізуйте коректний час для RTC через консоль
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Змініть код програми і виводьте час використовуючи RTC модуль
+                        </ListItem>
+                        <ListItem textSize={25}>
+                            Завантажте програму і перевірте її роботу
+                        </ListItem>
+                    </List>
                 </Slide>
                 <Slide bgColor="secondary">
                     <Heading size={4} lineHeight={1} caps fit textColor="quartenary" textFont="Times New Roman">
